@@ -28,7 +28,7 @@ If it doesn't connect, hold boot button, hold now reset button, keep for 2 secon
 
 After connection you will be prompted what to flash and where. You need to flash the firmware "LCD_DASH_7Inch_FREE.Bin" right at 0x0000 address. if you prefer a more visual guide, check:
 
-https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY/blob/main/How%20to%20flash.pdf
+https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/How%20to%20flash.pdf
 
 After it's done, reboot the device using the reset button or unplug/plug back your USB.
 
@@ -45,10 +45,10 @@ One of the most recent version is the following: https://www.youtube.com/watch?v
 
 List of features and available backgrounds here: 
 
-https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY/blob/main/Catalogue.pdf
+https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Catalogue.pdf
 
 How to purchase:
 
-premium licensed software price is only 75 Euro
+premium licensed software price is only 75 Euro, that's a contribution to my years of developing: this will help me to build new units / tools / graphics.
 
 Basically, after you first flash the demo version of the device, you can get an unique license code clicking on the bottom right corner of the screen. If you wish to purchase the paid version, you need to send me license code and send me an inquiry through my website: https://somahex00.wixsite.com/home/contact what you get is your custom licensed firmware bin that will run only on your board and you cannot distribuite it to other boards. This is done to prevent multiple units having the same paid license.
