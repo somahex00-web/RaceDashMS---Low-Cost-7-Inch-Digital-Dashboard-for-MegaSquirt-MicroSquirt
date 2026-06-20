@@ -35,14 +35,17 @@ After it's done, reboot the device using the reset button or unplug/plug back yo
 Very important!!! behind the board there's a small selector to enable the canbus termination resistor. If your canbus doesn't have any other node except ECU and Dashboard, you need to switch it on. if you have other nodes, I suggest you to check with a Multimeter if there are already 60ohm between CanH and CanL wires, this would mean the network is correctly terminated. If there are 120ohm, you most likely have 1 termination only and you need to activate the switch on the board.
 
 Now onto the wiring of the unit to the microsquirt! Follow this:
+note: to power the board with your car voltage, you need a 12-24/5v buck converter like the one shown in the following guide: (I prefer the one with USB output, then use a USB cable to power the dashboard. it has proven to be the most reliable setup with 0 failure up to today).
 
-https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY/blob/main/Dashboard%20for%20microsquirt%20installation%20guide%20-%205%20inch%20dash%20ENG%20161025.pdf
+https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Dashboard%20for%20microsquirt%20installation%20guide%20-%207%20inch%20dash%20ENG%20071125.pdf
 
 I've made tons of better graphics which i'm keeping for licensed use, you can check some on my youtube channel: https://www.youtube.com/@alfredodimatteo2850
 
 One of the most recent version is the following: https://www.youtube.com/watch?v=xfOAbD9B4jw
 
-List of features and available backgrounds here: https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY/blob/main/Catalogue.pdf
+List of features and available backgrounds here: 
+
+https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY/blob/main/Catalogue.pdf
 
 How to purchase:
 
