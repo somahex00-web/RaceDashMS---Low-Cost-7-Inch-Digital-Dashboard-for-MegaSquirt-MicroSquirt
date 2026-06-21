@@ -18,7 +18,8 @@ you need the touch version with 800*480 resolution.
 
 Get a USB Type C data cable and hook it up into your device.
 
-Download my free_bin here: **will upload it next week**
+Download my free_bin here: 
+https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Dash_Micro_LCD7_Free.bin
 
 Then visit this website https://esptool.spacehuhn.com/ and connect to your device.
 
