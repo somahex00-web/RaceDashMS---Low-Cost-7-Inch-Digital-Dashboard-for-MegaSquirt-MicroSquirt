@@ -1,55 +1,296 @@
-# Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-
-How to build a 7 inch LCD digital dashboard for cheap, displaying many ECU parameters in realtime 
+# Megasquirt / Microsquirt 7" LCD Digital Dashboard - DIY under $50
 
+A low-cost 7 inch digital racing dashboard solution for Megasquirt and Microsquirt ECUs, displaying real-time ECU parameters through CAN Bus.
 
-Do you wish you had money to invest for all these nice and expensive LCD race dashboards out there? Do you need to monitor your ECU Data without bringing your laptop with you all the time?
+<p align="center">
+  <img src="images/Free_dashboard_design.jpg" width="800">
+</p>
 
-There's a solution, and it's very cheap. I've been tinkering for years to develop this solution, wasted a lot of money on development boards all for having the BEST solution ever. This is the solution with a wider screen (7 inch). If you prefer 5" screens, check my other repos.
+---
 
-Check the following youtube video to see a demo for the free version: https://youtu.be/rjETbBOaq9w?is=f5A8JH6c0yH7SYUK
+# Introduction
 
-On this video, the dashboard is receiving simulated data over CanBus. The firmware is tested and currently running on 20+ cars and it's actually bug free.
+Have you ever looked at modern racing LCD dashboards and thought:
 
-Here how you can do it, it's very simple, first you purchase this (if you want to buy me a beer, purchase it through my link:
+*"I wish I could afford one..."*
+
+Professional motorsport dashboards are amazing, but they are usually very expensive.
+
+This project provides a cheap alternative:
+a fully functional digital LCD dashboard capable of displaying ECU data in real time, without needing a laptop inside the car.
+
+After years of development, testing, and many prototype boards, this is the result:
+a reliable 7 inch touchscreen dashboard solution running on real vehicles.
+
+The firmware has been tested extensively and is currently running on **20+ cars**.
+
+The dashboard communicates with the ECU through CAN Bus and is designed specifically for Megasquirt / Microsquirt systems.
+
+> If you prefer a smaller display, check my 5 inch version:
+> 
+> https://github.com/somahex00-web/Megasquirt-Microsquirt-digital-dashboard-for-under-50-DIY
+
+---
+
+# Demo Video
+
+Free version demonstration:
+
+https://youtu.be/rjETbBOaq9w
+
+The video shows the dashboard receiving simulated CAN Bus data.
+
+---
+
+# Required Hardware
+
+You need:
+
+- ESP32-S3 7 inch Touch LCD
+- USB Type-C data cable
+- Megasquirt / Microsquirt ECU
+
+Recommended display:
+
+Waveshare ESP32-S3 Touch LCD 7 inch (800x480)
+
+Purchase link:
 
 https://www.waveshare.com/esp32-s3-touch-lcd-7.htm?&aff_id=155489
 
-you need the touch version with 800*480 resolution.
+(Using my link helps support the development of this project.)
 
-Get a USB Type C data cable and hook it up into your device.
+---
 
-Download my free_bin here: 
+# Installing the Free Firmware
+
+## 1. Download Firmware
+
+Download the free firmware:
+
 https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Dash_Micro_LCD7_Free.bin
 
-Then visit this website https://esptool.spacehuhn.com/ and connect to your device.
+---
 
-You need to select your board from available COM Ports. It's easily detectable as it says "ESP32" or something recognizable.
+## 2. Connect the Display
 
-If it doesn't connect, hold boot button, hold now reset button, keep for 2 seconds then release reset, wait 1 second and also release boot. It should work now.
+Connect the ESP32-S3 display to your PC using a USB Type-C data cable.
 
-After connection you will be prompted what to flash and where. You need to flash the firmware "LCD_DASH_7Inch_FREE.Bin" right at 0x0000 address. if you prefer a more visual guide, check:
+---
+
+## 3. Flash the Firmware
+
+Open:
+
+https://esptool.spacehuhn.com/
+
+Select your ESP32 device from the available COM ports.
+
+The board should appear as:
+
+
+ESP32
+
+
+If the device does not connect:
+
+1. Hold the BOOT button
+2. Hold the RESET button
+3. Keep both pressed for around 2 seconds
+4. Release RESET
+5. Wait 1 second
+6. Release BOOT
+
+The device should now connect.
+
+---
+
+## 4. Flash Settings
+
+Select:
+
+
+LCD_DASH_7Inch_FREE.bin
+
+
+Flash address:
+
+
+0x0000
+
+
+Visual flashing guide:
 
 https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/How%20to%20flash.pdf
 
-After it's done, reboot the device using the reset button or unplug/plug back your USB.
+After flashing:
 
-Very important!!! behind the board there's a small selector to enable the canbus termination resistor. If your canbus doesn't have any other node except ECU and Dashboard, you need to switch it on. if you have other nodes, I suggest you to check with a Multimeter if there are already 60ohm between CanH and CanL wires, this would mean the network is correctly terminated. If there are 120ohm, you most likely have 1 termination only and you need to activate the switch on the board.
+- Press RESET
+or
+- Disconnect and reconnect USB
 
-Now onto the wiring of the unit to the microsquirt! Follow this:
-note: to power the board with your car voltage, you need a 12-24/5v buck converter like the one shown in the following guide: (I prefer the one with USB output, then use a USB cable to power the dashboard. it has proven to be the most reliable setup with 0 failure up to today).
+The dashboard should start.
+
+---
+
+# CAN Bus Termination
+
+Important:
+
+On the back of the display board there is a selector to enable the CAN Bus termination resistor.
+
+If your CAN network only contains:
+
+
+ECU + Dashboard
+
+
+enable the termination resistor.
+
+If you have other CAN Bus devices:
+
+Measure resistance between:
+
+
+CAN-H and CAN-L
+
+
+Expected values:
+
+
+60 Ohm → Correct termination
+120 Ohm → Only one termination present
+
+
+If you measure 120 Ohm, enable the termination switch on the dashboard board.
+
+---
+
+# Power Supply Installation
+
+To power the dashboard from vehicle voltage, you need a:
+
+
+12-24V to 5V Buck Converter like this one:
+
+<p align="center">
+  <img src="images/usb_5V_BuckConverter.png" width="300">
+</p>
+
+
+
+Recommended setup:
+
+- Install the buck converter in the vehicle
+- Use its USB output
+- Power the dashboard using a normal USB cable
+
+This configuration has proven to be the most reliable solution, with zero failures reported so far.
+
+---
+
+# Microsquirt Wiring
+
+Complete installation guide:
 
 https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Dashboard%20for%20microsquirt%20installation%20guide%20-%207%20inch%20dash%20ENG%20071125.pdf
 
-I've made tons of better graphics which i'm keeping for licensed use, you can check some on my youtube channel: https://www.youtube.com/@alfredodimatteo2850
+---
 
-One of the most recent version is the following: https://www.youtube.com/watch?v=xfOAbD9B4jw
+# Features
 
-List of features and available backgrounds here: 
+- 7 inch 800x480 touchscreen display
+- CAN Bus ECU communication
+- Megasquirt / Microsquirt compatibility
+- Real-time ECU parameters
+- Custom racing dashboard graphics
+- Multiple layouts and backgrounds
+- Standalone operation
+- No laptop required
+- Low-cost hardware
+
+---
+
+# Gallery
+
+example of licensed version design:
+
+<p align="center">
+  <img src="images/LuxuryV1_dashboard_design.png" width="800">
+</p>
+
+<p align="center">
+  <img src="images/MinimalRaceV1_dashboard_design.png" width="800">
+</p>
+
+Many others available.
+
+---
+
+# Dashboard Designs & Backgrounds
+
+Catalogue:
 
 https://github.com/somahex00-web/Megasquirt-Microsquirt-7-LCD-digital-dashboard-for-under-50-DIY-/blob/main/Catalogue.pdf
 
-How to purchase:
+More graphics and examples:
 
-premium licensed software price is only 75 Euro, that's a contribution to my years of developing: this will help me to build new units / tools / graphics.
+YouTube channel:
 
-Basically, after you first flash the demo version of the device, you can get an unique license code clicking on the bottom right corner of the screen. If you wish to purchase the paid version, you need to send me license code and send me an inquiry through my website: https://somahex00.wixsite.com/home/contact what you get is your custom licensed firmware bin that will run only on your board and you cannot distribuite it to other boards. This is done to prevent multiple units having the same paid license.
+https://www.youtube.com/@alfredodimatteo2850
+
+Latest dashboard version:
+
+https://www.youtube.com/watch?v=xfOAbD9B4jw
+
+---
+
+# Premium License
+
+The free firmware allows you to test the hardware and basic dashboard functions.
+
+The premium licensed software price is:
+
+
+75 Euro
+
+
+This contribution supports:
+
+- New dashboard designs
+- Development tools
+- Hardware testing
+- Future improvements
+
+---
+
+# How to Purchase
+
+1. Flash the free firmware
+2. Boot the dashboard
+3. Click the bottom-right corner of the screen
+4. Copy your unique license code
+
+Send the license code through:
+
+https://somahex00.wixsite.com/home/contact
+
+You will receive a custom firmware file generated specifically for your board.
+
+Each license is hardware-bound:
+
+- Works only on your device
+- Cannot be copied to other boards
+- Prevents license sharing
+
+---
+
+# Support & Updates
+
+Development updates, new graphics and examples:
+
+https://www.youtube.com/@alfredodimatteo2850
+
+---
+
+Made with passion for DIY motorsport electronics.
