@@ -6,6 +6,12 @@ A low-cost 7 inch digital racing dashboard solution for Megasquirt and Microsqui
   <img src="images/Free_dashboard_design.jpg" width="800">
 </p>
 
+Premium lincensed version + 3d printed case installed:
+
+<p align="center">
+  <img src="images/7InchDashboardInstalled.jpg" width="800">
+</p>
+
 ---
 
 # Introduction
@@ -254,6 +260,14 @@ The premium licensed software price is:
 
 75 Euro
 
+You also get the following 3d file ready to print:
+
+https://cults3d.com/en/3d-model/various/waveshare-esp32-s3-7inch-display-dashboard-case
+
+<p align="center">
+  <img src="images/7InchDashPremiumwithCase.jpg" width="800">
+</p>
+
 
 This contribution supports:
 
@@ -284,6 +298,21 @@ Each license is hardware-bound:
 - Prevents license sharing
 
 ---
+
+# Enclosure / 3d Case
+
+For premium user, you get to have this designs for free:
+
+https://cults3d.com/en/3d-model/various/waveshare-esp32-s3-7inch-display-dashboard-case
+
+
+I can even customize the hole insert for you.
+
+For free users you can purchase the above 3d file to support the project or source your own enclosure.
+
+
+---
+
 
 # Support & Updates
 
